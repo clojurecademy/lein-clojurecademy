@@ -48,7 +48,7 @@
 
 (defn- post!
   [creds file]
-  (client/post "https://clojurecademy.com/course/upload"
+  (client/post "http://clojurecademy.com/course/upload"
                {:headers   {"username-or-email" (:username-or-email creds) "password" (:password creds)}
                 :multipart [{:name "Content/type" :content "plain/text"}
                             {:name "file" :content (clojure.java.io/file file)}]})
