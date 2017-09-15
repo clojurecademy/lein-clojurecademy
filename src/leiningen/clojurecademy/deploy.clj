@@ -1,6 +1,7 @@
 (ns leiningen.clojurecademy.deploy
   (:require [leiningen.clojurecademy.autotest :as test]
             [leiningen.clojurecademy.repl.helper-fns :as helper-fns]
+            [leiningen.clojurecademy.http.client :as client]
             [leinjacker.eval :as jacker]
             [clojure.java.io :as io]
             [clj-http.client :as client]
@@ -48,7 +49,7 @@
 
 (defn- post!
   [creds file]
-  (client/post "http://clojurecademy.com/course/upload"
+  (client/post "https://clojurecademy.com/course/upload"
                {:headers   {"username-or-email" (:username-or-email creds) "password" (:password creds)}
                 :multipart [{:name "Content/type" :content "plain/text"}
                             {:name "file" :content (clojure.java.io/file file)}]})
