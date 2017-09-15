@@ -1,4 +1,4 @@
-(defproject lein-clojurecademy "0.1.2"
+(defproject lein-clojurecademy "0.1.3"
 
   :description "Clojurecademy Leiningen Plugin"
 
