@@ -66,7 +66,7 @@
       (post! creds file)
       (catch Exception e
         (println " -> " (or (-> e Throwable->map :data :body) "Host is not reachable"))
-        (println "Course could not be deployed!"))
+        (println "Course could not be deployed!\n" e))
       (finally
         (reset! flag false)))))
 
