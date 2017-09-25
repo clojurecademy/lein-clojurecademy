@@ -12,7 +12,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/tools.nrepl "0.2.12"]
                  [org.clojure/tools.namespace "0.2.11"]
-                 [clojurecademy/dsl "0.3.5"]
+                 [clojurecademy "0.1.0"]
                  [clj-http "3.6.1"]
                  [colorize "0.1.1" :exclusions [org.clojure/clojure]]
                  [leinjacker "0.4.2"]
