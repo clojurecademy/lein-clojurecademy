@@ -105,6 +105,10 @@
           (when-let [f (first (set/difference before after))]
             (throw (RuntimeException. ^String (str "You can not override built-in function: `" (-> f meta :name) "`"))))
           result))
+      (catch TimeoutException e
+        (util/println-error "\nExecution Time Out! Your code execution time took more than 2.5 seconds."
+                            (get-test-failed-msg test-var route e))
+        false)
       (catch SecurityException e
         (util/println-error "\nYou can not use one of the blacklisted Java Classes & Clojure Namespaces/Symbols!"
                             (get-test-failed-msg test-var route e))

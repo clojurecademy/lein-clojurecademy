@@ -199,7 +199,7 @@
   [sb-ns body-form additional-symbols]
   (util/println-debug "*Creating sandbox...*\n")
   (sandbox (create-tester additional-symbols)
-           :timeout 4000
+           :timeout 2500
            :namespace sb-ns
            :init (create-init-code body-form)))
 
@@ -207,5 +207,5 @@
   [helper-checker-ns]
   (util/println-debug "*Creating sandbox for helpers...*\n")
   (sandbox (secure-tester)
-           :timeout 4000
+           :timeout 2500
            :namespace helper-checker-ns))
