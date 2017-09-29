@@ -9,7 +9,8 @@
             [leiningen.clojurecademy.repl.sub-instructions :as sub-instructions]
             [leiningen.clojurecademy.conf :as conf]
             [clojure.set :as set]
-            [clojure.pprint :as pp]))
+            [clojure.pprint :as pp])
+  (:import (java.util.concurrent TimeoutException)))
 
 
 (def sb-ns-prefix "sandbox-ns-")
