@@ -66,8 +66,9 @@
     (try
       ((sandbox/make-sandbox-for-helpers helper-checker-ns) helper-fns-ds)
       (catch Throwable t
-        (remove-ns helper-checker-ns)
-        (throw (RuntimeException. ^String (str "Your helper fns are invalid : " (.getMessage t))))))))
+        (throw (RuntimeException. ^String (str "Your helper fns are invalid : " (.getMessage t)))))
+      (finally
+        (remove-ns helper-checker-ns)))))
 
 (defn create-helper-fns-ns
   [sb-ns sb-helper-ns helper-fns-ds]
